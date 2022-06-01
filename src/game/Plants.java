@@ -62,7 +62,7 @@ public class Plants {
         timer++;
     }
     public boolean shooter_time_over() {
-        return timer > 17;
+        return timer > 24;
     }
 
     //Peashooter animation
