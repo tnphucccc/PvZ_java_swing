@@ -10,7 +10,7 @@ public class winfield {
     }
     void winfield(Graphics g) {
         g.drawImage(new ImageIcon("image/win.png")
-                .getImage(), 0, 0, 850, 678, null);
+                .getImage(), 0, 0, null);
     }
     public void mouseclick(int x, int y) {
         if (new Rectangle(0, 0, 850, 678).contains(x, y)) {

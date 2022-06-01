@@ -62,7 +62,7 @@ public class Plants {
         timer++;
     }
     public boolean shooter_time_over() {
-        return timer > 24;
+        return timer > 30;
     }
 
     //Peashooter animation
@@ -103,7 +103,7 @@ public class Plants {
         timer++;
     }
     public boolean sunflower_timer_over() {
-        return timer > 83;
+        return timer > 68;
     }
 
     //Sunflower animation
@@ -141,7 +141,7 @@ public class Plants {
 
     //Nut animation
     public void nut_health() {
-        hp = 390;
+        hp = 420;
         state = 1;
     }
     private void nut_health_show(Graphics g) {
