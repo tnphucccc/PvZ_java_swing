@@ -137,7 +137,7 @@ public class Zombie {
         state = 10;
     }
     public void iced_move_show(Graphics g) {
-        g.drawImage(new ImageIcon("image/zombie/zombie"+page+".png")
+        g.drawImage(new ImageIcon("image/iced_zom/iced"+page+".png")
                 .getImage(), x, y, null);
     }
     public void iced_move_animate() {
@@ -177,7 +177,7 @@ public class Zombie {
         page = 0;
     }
     public void iced_eat_show(Graphics g) {
-        g.drawImage(new ImageIcon("image/zombie/eat"+page+".png")
+        g.drawImage(new ImageIcon("image/iced_zom/icedeat"+page+".png")
                 .getImage(), x, y, null);
     }
     public void iced_eat_animate() {
