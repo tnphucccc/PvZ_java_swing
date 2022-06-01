@@ -150,7 +150,7 @@ public class gamefield {
         }
         //==============Sun Token==============
         for (int i = 0; i < sunList.size(); i++) {
-            if (sunList.get(i).ifclicked(mx, my)) {;
+            if (sunList.get(i).ifclicked(mx, my)) {
                 sunList.remove(i);
                 sunNum += 50;
             }
