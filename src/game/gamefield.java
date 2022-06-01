@@ -255,7 +255,7 @@ public class gamefield {
             sunList.get(i).paintComponent(g);
         }
         g.setFont(new Font("Serif", Font.BOLD, 17));
-        g.drawString("" + sunNum, 40, 80);
+        g.drawString("" + sunNum, 38, 77);
     }
 
     public void timer() throws Exception {
