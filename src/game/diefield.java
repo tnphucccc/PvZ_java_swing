@@ -9,7 +9,7 @@ public class diefield {
         this.pvz = pvz;
     }
     void diefield(Graphics g) {
-        g.drawImage(new ImageIcon("image/die.png")
+        g.drawImage(new ImageIcon("image/die_1.png")
                 .getImage(), 0, 0, 850, 678, null);
     }
     public void mouseclick(int x, int y) {
