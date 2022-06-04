@@ -66,7 +66,7 @@ public class gamefield {
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newsun;
                     sunNum -= 25;
-                    cardList.get(i).canbuyornot=0;
+                    cardList.get(i).canbuyornot = 0;
                     sunflower.clear();
                 }
             }
@@ -89,7 +89,7 @@ public class gamefield {
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newpes;
                     sunNum -= 100;
-                    cardList.get(i).canbuyornot=0;
+                    cardList.get(i).canbuyornot = 0;
                     peashooter.clear();
                 }
             }
@@ -112,7 +112,7 @@ public class gamefield {
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newnut;
                     sunNum-=50;
-                    cardList.get(i).canbuyornot=0;
+                    cardList.get(i).canbuyornot = 0;
                     nut.clear();
                 }
             }
@@ -135,7 +135,7 @@ public class gamefield {
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newicepes;
                     sunNum -= 150;
-                    cardList.get(i).canbuyornot=0;
+                    cardList.get(i).canbuyornot = 0;
                     ice_peashooter.clear();
                 }
             }
@@ -297,7 +297,9 @@ public class gamefield {
 
                 Thread.sleep(200);
                 SoundAndMusic so = new SoundAndMusic("music/laugh.wav");
-                so.playSound("music/laugh.wav");
+                SoundAndMusic sm = new SoundAndMusic("music/just_died.wav");
+                //so.playSound("music/laugh.wav");
+                sm.playSound("music/just_died.wav");
 
                 maingame.pvz_game = null;
                 maingame.pvz_die = new diefield(maingame);
