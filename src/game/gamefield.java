@@ -57,94 +57,94 @@ public class gamefield {
     void mouseclick(int mx, int my) {
         for (int i = 0; i < cardList.size(); i++) {
             //==============Sunflower==============
-            if(cardList.get(i).cardname.equals("sunflower")
+            if (cardList.get(i).cardname.equals("sunflower")
                     && cardList.get(i).canbuyornot == 1) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
                 Plants newsun= new Plants(1, al*80, ah*100);
-                if(plants[ah][al] ==null) {
+                if (plants[ah][al] == null) {
                     plants[ah][al] = newsun;
                     sunNum -= 25;
                     cardList.get(i).canbuyornot=0;
                     sunflower.clear();
                 }
             }
-            if(cardList.get(i).cardname.equals("sunflower")
+            if (cardList.get(i).cardname.equals("sunflower")
                     && cardList.get(i).if_pressed(mx, my)
                     && sunNum >= 25) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
-                if(sunflower == null) sunflower = new Plants(1, mx, my, 3);
+                if (sunflower == null) sunflower = new Plants(1, mx, my, 3);
                 else sunflower.sunflower_put();
             }
 
             //==============Peashooter==============
-            if(cardList.get(i).cardname.equals("peashooter")
+            if (cardList.get(i).cardname.equals("peashooter")
                     && cardList.get(i).canbuyornot == 1) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
                 Plants newpes= new Plants(0, al*80, ah*100);
-                if(plants[ah][al] == null) {
+                if (plants[ah][al] == null) {
                     plants[ah][al] = newpes;
                     sunNum -= 100;
                     cardList.get(i).canbuyornot=0;
                     peashooter.clear();
                 }
             }
-            if(cardList.get(i).cardname.equals("peashooter")
+            if (cardList.get(i).cardname.equals("peashooter")
                     && cardList.get(i).if_pressed(mx, my)
                     && sunNum >= 100) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
-                if(sunflower == null) peashooter=new Plants(0, mx, my, 3);
+                if (sunflower == null) peashooter = new Plants(0, mx, my, 3);
                 else peashooter.shooter_put();
             }
 
             //==============Nut==============
-            if(cardList.get(i).cardname.equals("nut")
+            if (cardList.get(i).cardname.equals("nut")
                     && cardList.get(i).canbuyornot == 1) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
-                Plants newnut= new Plants(2, al*80, ah*100);
-                if(plants[ah][al] ==null) {
+                Plants newnut = new Plants(2, al*80, ah*100);
+                if (plants[ah][al] == null) {
                     plants[ah][al] = newnut;
                     sunNum-=50;
                     cardList.get(i).canbuyornot=0;
                     nut.clear();
                 }
             }
-            if(cardList.get(i).cardname.equals("nut")
+            if (cardList.get(i).cardname.equals("nut")
                     && cardList.get(i).if_pressed(mx,my)
                     && sunNum >= 50) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
-                if(nut==null)nut=new Plants(2, mx, my, 3);
+                if (nut==null) nut = new Plants(2, mx, my, 3);
                 else nut.nut_put();
             }
 
             //==============Ice_Peashooter==============
-            if(cardList.get(i).cardname.equals("icepeashooter")
+            if (cardList.get(i).cardname.equals("icepeashooter")
                     && cardList.get(i).canbuyornot == 1) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
-                Plants newicepes= new Plants(3, al*80, ah*100);
-                if(plants[ah][al] ==null) {
+                Plants newicepes = new Plants(3, al*80, ah*100);
+                if (plants[ah][al] == null) {
                     plants[ah][al] = newicepes;
                     sunNum -= 150;
                     cardList.get(i).canbuyornot=0;
                     ice_peashooter.clear();
                 }
             }
-            if(cardList.get(i).cardname.equals("icepeashooter")
+            if (cardList.get(i).cardname.equals("icepeashooter")
                     && cardList.get(i).if_pressed(mx,my)
                     && sunNum >= 150) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
-                if(ice_peashooter==null) ice_peashooter=new Plants(3, mx, my, 3);
+                if (ice_peashooter == null) ice_peashooter = new Plants(3, mx, my, 3);
                 else ice_peashooter.ice_shooter_put();
             }
         }
