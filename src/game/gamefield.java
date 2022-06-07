@@ -54,17 +54,20 @@ public class gamefield {
         BGM.StartPlay_BGM();
     }
 
+    boolean is_hold = false;
+
     void mouseclick(int mx, int my) {
         for (int i = 0; i < cardList.size(); i++) {
             //==============Sunflower==============
             if (cardList.get(i).cardname.equals("sunflower")
-                    && cardList.get(i).canbuyornot == 1) {
+                    && cardList.get(i).canbuyornot == 1 && is_hold) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
                 Plants newsun= new Plants(1, al*80, ah*100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newsun;
+                    is_hold = false;
                     sunNum -= 25;
                     cardList.get(i).canbuyornot = 0;
                     sunflower.clear();
@@ -72,22 +75,26 @@ public class gamefield {
             }
             if (cardList.get(i).cardname.equals("sunflower")
                     && cardList.get(i).if_pressed(mx, my)
-                    && sunNum >= 25) {
+                    && sunNum >= 25 && !is_hold) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
                 if (sunflower == null) sunflower = new Plants(1, mx, my, 3);
-                else sunflower.sunflower_put();
+                else {
+                    sunflower.sunflower_put();
+                    is_hold = true;
+                }
             }
 
             //==============Peashooter==============
             if (cardList.get(i).cardname.equals("peashooter")
-                    && cardList.get(i).canbuyornot == 1) {
+                    && cardList.get(i).canbuyornot == 1 && is_hold) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
                 Plants newpes= new Plants(0, al*80, ah*100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newpes;
+                    is_hold = false;
                     sunNum -= 100;
                     cardList.get(i).canbuyornot = 0;
                     peashooter.clear();
@@ -95,45 +102,53 @@ public class gamefield {
             }
             if (cardList.get(i).cardname.equals("peashooter")
                     && cardList.get(i).if_pressed(mx, my)
-                    && sunNum >= 100) {
+                    && sunNum >= 100 && !is_hold) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
                 if (sunflower == null) peashooter = new Plants(0, mx, my, 3);
-                else peashooter.shooter_put();
+                else {
+                    peashooter.shooter_put();
+                    is_hold =true;
+                }
             }
 
             //==============Nut==============
             if (cardList.get(i).cardname.equals("nut")
-                    && cardList.get(i).canbuyornot == 1) {
+                    && cardList.get(i).canbuyornot == 1 && is_hold) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
                 Plants newnut = new Plants(2, al*80, ah*100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newnut;
-                    sunNum-=50;
+                    is_hold = false;
+                    sunNum -= 50;
                     cardList.get(i).canbuyornot = 0;
                     nut.clear();
                 }
             }
             if (cardList.get(i).cardname.equals("nut")
                     && cardList.get(i).if_pressed(mx,my)
-                    && sunNum >= 50) {
+                    && sunNum >= 50 && !is_hold) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
                 if (nut==null) nut = new Plants(2, mx, my, 3);
-                else nut.nut_put();
+                else {
+                    nut.nut_put();
+                    is_hold = true;
+                }
             }
 
             //==============Ice_Peashooter==============
             if (cardList.get(i).cardname.equals("icepeashooter")
-                    && cardList.get(i).canbuyornot == 1) {
+                    && cardList.get(i).canbuyornot == 1 && is_hold) {
                 int ah = (my-81)/100;
                 int al = (mx-34)/80;
 
                 Plants newicepes = new Plants(3, al*80, ah*100);
                 if (plants[ah][al] == null) {
                     plants[ah][al] = newicepes;
+                    is_hold = false;
                     sunNum -= 150;
                     cardList.get(i).canbuyornot = 0;
                     ice_peashooter.clear();
@@ -141,11 +156,14 @@ public class gamefield {
             }
             if (cardList.get(i).cardname.equals("icepeashooter")
                     && cardList.get(i).if_pressed(mx,my)
-                    && sunNum >= 150) {
+                    && sunNum >= 150 && !is_hold) {
                 cardList.get(i).canbuyornot++;
                 cardList.get(i).canbuyornot%=2;
                 if (ice_peashooter == null) ice_peashooter = new Plants(3, mx, my, 3);
-                else ice_peashooter.ice_shooter_put();
+                else {
+                    ice_peashooter.ice_shooter_put();
+                    is_hold = true;
+                }
             }
         }
         //==============Sun Token==============
